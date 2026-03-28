@@ -57,14 +57,6 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
-    background-color: hsl(0 0% 3.1%);
-    background-image:
-      radial-gradient(ellipse at 20% 50%, hsl(21 100% 50% / 0.04) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 20%, hsl(258 90% 66% / 0.03) 0%, transparent 50%),
-      radial-gradient(ellipse at 60% 80%, hsl(217 91% 60% / 0.03) 0%, transparent 50%),
-      linear-gradient(60deg, hsl(0 0% 100% / 0.025) 25%, transparent 25.5%, transparent 50%, hsl(0 0% 100% / 0.025) 50%, hsl(0 0% 100% / 0.025) 75%, transparent 75.5%, transparent),
-      linear-gradient(120deg, hsl(0 0% 100% / 0.025) 25%, transparent 25.5%, transparent 50%, hsl(0 0% 100% / 0.025) 50%, hsl(0 0% 100% / 0.025) 75%, transparent 75.5%, transparent);
-    background-size: 100% 100%, 100% 100%, 100% 100%, 48px 84px, 48px 84px;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
