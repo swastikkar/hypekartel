@@ -43,11 +43,6 @@ const SplashScreen = () => {
             <p className="text-foreground font-display text-2xl tracking-wider">
               Early drops. Cop faster.
             </p>
-            <p className="text-muted-foreground font-body text-sm mb-6">
-              Dark-themed resale app — verified sellers,
-              <br />
-              escrow payments, AR authentication.
-            </p>
             <button
               onClick={(e) => {
                 e.stopPropagation();
