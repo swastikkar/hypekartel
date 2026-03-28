@@ -20,8 +20,7 @@ const SplashScreen = () => {
       }}
     >
       <div
-        className="relative w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col cursor-pointer"
-        onClick={() => navigate("/signup")}
+        className="relative w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col"
       >
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-between px-8 pt-16 pb-10">
@@ -44,11 +43,20 @@ const SplashScreen = () => {
             <p className="text-foreground font-display text-2xl tracking-wider">
               Early drops. Cop faster.
             </p>
-            <p className="text-muted-foreground font-body text-sm">
+            <p className="text-muted-foreground font-body text-sm mb-6">
               Dark-themed resale app — verified sellers,
               <br />
               escrow payments, AR authentication.
             </p>
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                navigate("/signup");
+              }}
+              className="bg-primary text-primary-foreground font-display text-xl tracking-widest px-10 py-3 rounded-pill hover:opacity-90 transition-opacity"
+            >
+              Join the Movement
+            </button>
           </div>
 
           {/* Lightning icon */}
