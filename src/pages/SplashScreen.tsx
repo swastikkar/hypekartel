@@ -20,8 +20,7 @@ const SplashScreen = () => {
       }}
     >
       <div
-        className="relative w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col cursor-pointer"
-        onClick={() => navigate("/signup")}
+        className="relative w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col"
       >
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-between px-8 pt-16 pb-10">
