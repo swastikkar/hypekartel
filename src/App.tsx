@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import SplashScreen from "./pages/SplashScreen";
+import SignupScreen from "./pages/SignupScreen";
 import HomePage from "./pages/HomePage";
 import ItemDetail from "./pages/ItemDetail";
 import AuthCertificate from "./pages/AuthCertificate";
@@ -22,7 +24,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<SplashScreen />} />
+          <Route path="/splash" element={<SplashScreen />} />
+          <Route path="/signup" element={<SignupScreen />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/item" element={<ItemDetail />} />
           <Route path="/auth-cert" element={<AuthCertificate />} />
           <Route path="/checkout" element={<Checkout />} />
