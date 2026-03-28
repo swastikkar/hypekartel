@@ -50,7 +50,7 @@ const SplashScreen = () => {
               }}
               className="bg-primary text-primary-foreground font-display text-xl tracking-widest px-10 py-3 rounded-pill hover:opacity-90 transition-opacity"
             >
-              Join the Movement
+              Join The Movement
             </button>
           </div>
 
