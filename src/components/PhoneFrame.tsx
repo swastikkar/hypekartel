@@ -8,7 +8,7 @@ interface PhoneFrameProps {
 
 const PhoneFrame = ({ children, activeNav = "home" }: PhoneFrameProps) => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-background p-4">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-primary-foreground">
       <div className="relative w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col">
         {/* Dynamic Island */}
         <div className="flex justify-center pt-2">
