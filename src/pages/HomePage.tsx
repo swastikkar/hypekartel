@@ -29,12 +29,6 @@ const HomePage = () => {
           </div>
         </div>
 
-        {/* WhatsApp Banner */}
-        <div className="bg-card border border-border rounded-xl p-3">
-          <p className="text-[11px] font-body text-verified">
-            💬 Buy & sell via WhatsApp Bot — same escrow & auth, no app needed
-          </p>
-        </div>
 
         {/* Early Drop */}
         <div className="bg-gradient-to-r from-primary/20 to-primary/5 border border-primary/30 rounded-xl p-3 flex items-center justify-between">
