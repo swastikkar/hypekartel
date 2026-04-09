@@ -25,7 +25,7 @@ const SplashScreen = () => {
         {/* Content */}
         <div className="flex-1 flex flex-col items-center justify-between px-8 pt-16 pb-10">
           {/* Top: Brand name */}
-          <h1 className="text-5xl text-primary tracking-widest">HypeKartel</h1>
+          <h1 className="text-primary tracking-widest text-6xl">HypeKartel</h1>
 
           {/* Center: Hero illustration */}
           <div className="flex-1 flex items-center justify-center">
@@ -34,7 +34,7 @@ const SplashScreen = () => {
               alt="Streetwear enthusiast"
               width={300}
               height={300}
-              className="object-contain drop-shadow-2xl"
+              className="object-contain drop-shadow-2xl shadow-none opacity-100"
             />
           </div>
 
