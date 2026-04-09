@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail, Lock } from "lucide-react";
-import signupLogo from "@/assets/signup-logo.png";
+import signupLogo from "@/assets/signup-logo.webp";
 
 const SignupScreen = () => {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ const SignupScreen = () => {
             alt="HypeKartel logo"
             width={120}
             height={120}
-            className="mb-6"
+            className="mb-6 object-fill"
           />
 
           {/* Title */}
