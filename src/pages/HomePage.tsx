@@ -3,7 +3,7 @@ import ListingCard from "@/components/ListingCard";
 import SectionHeader from "@/components/SectionHeader";
 
 import { Bell, User } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const categories = ["All", "Sneakers", "Streetwear", "Watches", "Tickets", "📍 Near Me"];
 
