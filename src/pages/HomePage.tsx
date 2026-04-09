@@ -62,13 +62,6 @@ const HomePage = () => {
           ))}
         </div>
 
-        {/* Campus Ambassador */}
-        <StripCard
-          icon="🎓"
-          title="Campus Rep at NMIMS Mumbai"
-          subtitle="Vedant K. · Verified Local Deals"
-          variant="default"
-        />
 
         {/* Trending Grid */}
         <SectionHeader title="TRENDING NOW" action="See All →" />
