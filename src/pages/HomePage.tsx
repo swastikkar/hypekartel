@@ -3,7 +3,7 @@ import ListingCard from "@/components/ListingCard";
 import SectionHeader from "@/components/SectionHeader";
 
 import { Bell, User } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const categories = ["All", "Sneakers", "Streetwear", "Watches", "Tickets", "📍 Near Me"];
 
@@ -14,8 +14,20 @@ const listings = [
   { name: "New Balance 550 White Green", price: "₹12,200", tier: "Verified", condition: "8/10", emoji: "👟" },
 ];
 
+const DROP_DURATION = 23 * 60 + 41; // 23min 41sec
+
 const HomePage = () => {
   const [activeCat, setActiveCat] = useState("All");
+  const [timeLeft, setTimeLeft] = useState(DROP_DURATION);
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    const interval = setInterval(() => setTimeLeft((t) => Math.max(0, t - 1)), 1000);
+    return () => clearInterval(interval);
+  }, [timeLeft]);
+
+  const minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
+  const seconds = (timeLeft % 60).toString().padStart(2, "0");
 
   return (
     <PhoneFrame activeNav="home">
@@ -36,7 +48,7 @@ const HomePage = () => {
             <p className="text-[10px] font-body font-semibold text-primary">⚡ EARLY DROP — Gold Members Only</p>
             <p className="text-[11px] font-body text-foreground mt-0.5">Jordan 4 Military Black · 50 pairs</p>
           </div>
-          <span className="font-display text-primary text-2xl">23:41</span>
+          <span className="font-display text-primary text-2xl tabular-nums">{minutes}:{seconds}</span>
         </div>
 
         {/* Search */}
