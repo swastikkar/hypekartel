@@ -37,7 +37,7 @@ const PhoneFrame = ({ children, activeNav = "home" }: PhoneFrameProps) => {
           </div>
         </div>
         {/* Content */}
-        <div className="flex-1 overflow-y-auto px-4 pb-24">
+        <div className="flex-1 overflow-y-auto px-4 pb-24 no-scrollbar">
           {children}
         </div>
         {/* Bottom Nav */}
