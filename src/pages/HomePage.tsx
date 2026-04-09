@@ -48,7 +48,7 @@ const HomePage = () => {
             <p className="text-[10px] font-body font-semibold text-primary">⚡ EARLY DROP — Gold Members Only</p>
             <p className="text-[11px] font-body text-foreground mt-0.5">Jordan 4 Military Black · 50 pairs</p>
           </div>
-          <span className="font-display text-primary text-2xl">23:41</span>
+          <span className="font-display text-primary text-2xl tabular-nums">{minutes}:{seconds}</span>
         </div>
 
         {/* Search */}
