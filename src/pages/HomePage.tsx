@@ -14,8 +14,20 @@ const listings = [
   { name: "New Balance 550 White Green", price: "₹12,200", tier: "Verified", condition: "8/10", emoji: "👟" },
 ];
 
+const DROP_DURATION = 23 * 60 + 41; // 23min 41sec
+
 const HomePage = () => {
   const [activeCat, setActiveCat] = useState("All");
+  const [timeLeft, setTimeLeft] = useState(DROP_DURATION);
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+    const interval = setInterval(() => setTimeLeft((t) => Math.max(0, t - 1)), 1000);
+    return () => clearInterval(interval);
+  }, [timeLeft]);
+
+  const minutes = Math.floor(timeLeft / 60).toString().padStart(2, "0");
+  const seconds = (timeLeft % 60).toString().padStart(2, "0");
 
   return (
     <PhoneFrame activeNav="home">
