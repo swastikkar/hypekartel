@@ -1,7 +1,7 @@
 import PhoneFrame from "@/components/PhoneFrame";
 import ListingCard from "@/components/ListingCard";
 import SectionHeader from "@/components/SectionHeader";
-import StripCard from "@/components/StripCard";
+
 import { Bell, User } from "lucide-react";
 import { useState } from "react";
 
@@ -62,13 +62,6 @@ const HomePage = () => {
           ))}
         </div>
 
-        {/* Campus Ambassador */}
-        <StripCard
-          icon="🎓"
-          title="Campus Rep at NMIMS Mumbai"
-          subtitle="Vedant K. · Verified Local Deals"
-          variant="default"
-        />
 
         {/* Trending Grid */}
         <SectionHeader title="TRENDING NOW" action="See All →" />
