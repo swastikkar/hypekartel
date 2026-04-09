@@ -1,7 +1,7 @@
 import PhoneFrame from "@/components/PhoneFrame";
 import ListingCard from "@/components/ListingCard";
 import SectionHeader from "@/components/SectionHeader";
-import StripCard from "@/components/StripCard";
+
 import { Bell, User } from "lucide-react";
 import { useState } from "react";
 
