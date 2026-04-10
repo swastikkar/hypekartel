@@ -44,7 +44,7 @@ const AnimatedBackground = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `hsla(0, 0%, 100%, ${p.alpha})`;
+        ctx.fillStyle = `hsla(21, 100%, 50%, ${p.alpha})`;
         ctx.fill();
       }
 
