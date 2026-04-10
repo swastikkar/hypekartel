@@ -8,10 +8,19 @@ import { useState, useEffect } from "react";
 const categories = ["All", "Sneakers", "Streetwear", "Watches", "Tickets", "📍 Near Me"];
 
 const listings = [
-  { name: "Air Jordan 1 Retro High OG Chicago", price: "₹24,000", tier: "Gold Seller", condition: "DS", emoji: "👟" },
-  { name: "Nike Dunk Low Panda", price: "₹14,400", tier: "Verified", condition: "VNDS", emoji: "👟" },
-  { name: "Yeezy 350 V2 Zebra", price: "₹18,500", tier: "Gold Seller", condition: "DS", emoji: "👟" },
-  { name: "New Balance 550 White Green", price: "₹12,200", tier: "Verified", condition: "8/10", emoji: "👟" },
+  { name: "Air Jordan 1 Retro High OG Chicago", price: "₹24,000", tier: "Gold Seller", condition: "DS", emoji: "👟", category: "Sneakers" },
+  { name: "Nike Dunk Low Panda", price: "₹14,400", tier: "Verified", condition: "VNDS", emoji: "👟", category: "Sneakers" },
+  { name: "Yeezy 350 V2 Zebra", price: "₹18,500", tier: "Gold Seller", condition: "DS", emoji: "👟", category: "Sneakers" },
+  { name: "New Balance 550 White Green", price: "₹12,200", tier: "Verified", condition: "8/10", emoji: "👟", category: "Sneakers" },
+  { name: "BluOrng Tshirt", price: "₹4,500", tier: "Verified", condition: "DS", emoji: "👕", category: "Streetwear" },
+  { name: "Balenciaga Hoodie", price: "₹38,000", tier: "Gold Seller", condition: "VNDS", emoji: "🧥", category: "Streetwear" },
+  { name: "Jaywalking Jacket", price: "₹12,800", tier: "Verified", condition: "DS", emoji: "🧥", category: "Streetwear" },
+  { name: "Carhartt Jean", price: "₹8,900", tier: "Verified", condition: "9/10", emoji: "👖", category: "Streetwear" },
+  { name: "Seiko 5 Sports", price: "₹22,000", tier: "Gold Seller", condition: "DS", emoji: "⌚", category: "Watches" },
+  { name: "Nike 2001 Vintage", price: "₹45,000", tier: "Gold Seller", condition: "8/10", emoji: "⌚", category: "Watches" },
+  { name: "Cartier Tank", price: "₹1,85,000", tier: "Gold Seller", condition: "VNDS", emoji: "⌚", category: "Watches" },
+  { name: "Karan Aujla VIP", price: "₹15,000", tier: "Verified", condition: "Valid", emoji: "🎫", category: "Tickets" },
+  { name: "KeineMusik GA", price: "₹8,500", tier: "Verified", condition: "Valid", emoji: "🎫", category: "Tickets" },
 ];
 
 const DROP_DURATION = 23 * 60 + 41; // 23min 41sec
@@ -78,9 +87,11 @@ const HomePage = () => {
         {/* Trending Grid */}
         <SectionHeader title="TRENDING NOW" action="See All →" />
         <div className="grid grid-cols-2 gap-3">
-          {listings.map((item, i) => (
-            <ListingCard key={i} {...item} />
-          ))}
+          {listings
+            .filter((item) => activeCat === "All" || item.category === activeCat)
+            .map((item, i) => (
+              <ListingCard key={i} {...item} />
+            ))}
         </div>
       </div>
     </PhoneFrame>
