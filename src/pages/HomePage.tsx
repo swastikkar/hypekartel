@@ -5,7 +5,7 @@ import SectionHeader from "@/components/SectionHeader";
 import { Bell, User } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const categories = ["All", "Sneakers", "Streetwear", "Watches", "Tickets", "📍 Near Me"];
+const categories = ["All", "Sneakers", "Streetwear", "Watches", "Tickets", "Collectibles", "📍 Near Me"];
 
 const listings = [
   { name: "Air Jordan 1 Retro High OG Chicago", price: "₹24,000", tier: "Gold Seller", condition: "DS", emoji: "👟", category: "Sneakers" },
@@ -21,6 +21,9 @@ const listings = [
   { name: "Cartier Tank", price: "₹1,85,000", tier: "Gold Seller", condition: "VNDS", emoji: "⌚", category: "Watches" },
   { name: "Karan Aujla VIP", price: "₹15,000", tier: "Verified", condition: "Valid", emoji: "🎫", category: "Tickets" },
   { name: "KeineMusik GA", price: "₹8,500", tier: "Verified", condition: "Valid", emoji: "🎫", category: "Tickets" },
+  { name: "Labubu", price: "₹6,500", tier: "Verified", condition: "DS", emoji: "🧸", category: "Collectibles" },
+  { name: "Pokemon Cards Deck", price: "₹12,000", tier: "Gold Seller", condition: "Sealed", emoji: "🃏", category: "Collectibles" },
+  { name: "Kaws Statue", price: "₹42,000", tier: "Gold Seller", condition: "DS", emoji: "🗿", category: "Collectibles" },
 ];
 
 const DROP_DURATION = 23 * 60 + 41; // 23min 41sec
