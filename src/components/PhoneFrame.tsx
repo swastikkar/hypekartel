@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import BottomNav from "./BottomNav";
+import AnimatedBackground from "./AnimatedBackground";
 
 interface PhoneFrameProps {
   children: ReactNode;
@@ -22,7 +23,8 @@ const PhoneFrame = ({ children, activeNav = "home" }: PhoneFrameProps) => {
         backgroundSize: '100% 100%, 100% 100%, 100% 100%, 48px 84px, 48px 84px',
       }}
     >
-      <div className="relative w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col">
+      <AnimatedBackground />
+      <div className="relative z-10 w-[375px] h-[812px] bg-background rounded-[40px] border-2 border-border overflow-hidden shadow-2xl flex flex-col">
         {/* Dynamic Island */}
         <div className="flex justify-center pt-2">
           <div className="w-[120px] h-[34px] bg-black rounded-full" />
