@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import BottomNav from "./BottomNav";
+import AnimatedBackground from "./AnimatedBackground";
 
 interface PhoneFrameProps {
   children: ReactNode;
