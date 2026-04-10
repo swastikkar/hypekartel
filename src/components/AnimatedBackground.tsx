@@ -10,7 +10,7 @@ const AnimatedBackground = () => {
     if (!ctx) return;
 
     let animationId: number;
-    const particles: { x: number; y: number; r: number; vx: number; vy: number; alpha: number; color: string }[] = [];
+    const particles: { x: number; y: number; r: number; vx: number; vy: number; alpha: number; color: number[] }[] = [];
 
     const resize = () => {
       canvas.width = window.innerWidth;
