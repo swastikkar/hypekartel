@@ -10,7 +10,7 @@ const AnimatedBackground = () => {
     if (!ctx) return;
 
     let animationId: number;
-    const particles: { x: number; y: number; r: number; vx: number; vy: number; alpha: number; color: string }[] = [];
+    const particles: { x: number; y: number; r: number; vx: number; vy: number; alpha: number; color: number[] }[] = [];
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -20,10 +20,10 @@ const AnimatedBackground = () => {
     window.addEventListener("resize", resize);
 
     const colors = [
-      "hsl(21, 100%, 50%)",   // primary orange
-      "hsl(258, 90%, 66%)",   // purple
-      "hsl(217, 91%, 60%)",   // escrow blue
-      "hsl(51, 100%, 50%)",   // gold
+      [21, 100, 50],   // primary orange
+      [258, 90, 66],   // purple
+      [217, 91, 60],   // escrow blue
+      [51, 100, 50],   // gold
     ];
 
     for (let i = 0; i < 40; i++) {
@@ -52,14 +52,15 @@ const AnimatedBackground = () => {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = p.color.replace(")", ` / ${p.alpha})`);
+        const [h, s, l] = p.color;
+        ctx.fillStyle = `hsla(${h}, ${s}%, ${l}%, ${p.alpha})`;
         ctx.fill();
 
         // Glow
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r * 6, 0, Math.PI * 2);
         const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 6);
-        grad.addColorStop(0, p.color.replace(")", ` / ${p.alpha * 0.3})`));
+        grad.addColorStop(0, `hsla(${h}, ${s}%, ${l}%, ${p.alpha * 0.3})`);
         grad.addColorStop(1, "transparent");
         ctx.fillStyle = grad;
         ctx.fill();
