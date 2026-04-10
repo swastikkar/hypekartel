@@ -20,10 +20,10 @@ const AnimatedBackground = () => {
     window.addEventListener("resize", resize);
 
     const colors = [
-      "hsl(21, 100%, 50%)",   // primary orange
-      "hsl(258, 90%, 66%)",   // purple
-      "hsl(217, 91%, 60%)",   // escrow blue
-      "hsl(51, 100%, 50%)",   // gold
+      [21, 100, 50],   // primary orange
+      [258, 90, 66],   // purple
+      [217, 91, 60],   // escrow blue
+      [51, 100, 50],   // gold
     ];
 
     for (let i = 0; i < 40; i++) {
