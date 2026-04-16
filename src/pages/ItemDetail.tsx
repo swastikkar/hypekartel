@@ -88,7 +88,7 @@ const ItemDetail = () => {
 
         {/* Tabs */}
         <div className="flex gap-4 border-b border-border pb-2">
-          {["Details", "Provenance", "Price History"].map((t, i) => (
+          {["Details", "​", "Price History"].map((t, i) => (
             <span key={t} className={`text-[12px] font-body font-medium pb-1 ${i === 0 ? "text-primary border-b-2 border-primary" : "text-muted-foreground"}`}>{t}</span>
           ))}
         </div>
