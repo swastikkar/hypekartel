@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Home, Camera, PlusCircle, Package, User } from "lucide-react";
 
 const items = [
-  { id: "home", label: "Home", icon: Home, path: "/" },
+  { id: "home", label: "Home", icon: Home, path: "/home" },
   { id: "scan", label: "Scan", icon: Camera, path: "/scan" },
   { id: "sell", label: "Sell", icon: PlusCircle, path: "/sell" },
   { id: "orders", label: "Orders", icon: Package, path: "/orders" },
