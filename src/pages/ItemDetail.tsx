@@ -3,9 +3,12 @@ import BackHeader from "@/components/BackHeader";
 import TagChip from "@/components/TagChip";
 import StripCard from "@/components/StripCard";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const ItemDetail = () => {
   const navigate = useNavigate();
+  const [showProvenance, setShowProvenance] = useState(false);
 
   return (
     <PhoneFrame activeNav="home">
