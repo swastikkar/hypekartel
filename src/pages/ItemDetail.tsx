@@ -121,7 +121,7 @@ const ItemDetail = () => {
               { icon: "🧾", label: "Original Receipt", detail: "Nike.com — 12 Jan 2025" },
               { icon: "📦", label: "Box Condition", detail: "Intact, all tags attached" },
               { icon: "📸", label: "Photos Verified", detail: "8 photos · AI cross-checked" },
-              { icon: "👤", label: "Previous Owners", detail: "1 — @kicks_boi (Gold Seller)" },
+              { icon: "👤", label: "Previous Owners", detail: "1 — @vedant_k " },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-3 bg-secondary/50 border border-border rounded-lg p-3">
                 <span className="text-lg">{item.icon}</span>
