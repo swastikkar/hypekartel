@@ -48,9 +48,10 @@ const OrderTracking = () => {
 
         {/* Actions */}
         <div className="space-y-2 pb-4">
-          <button className="w-full py-3 rounded-btn bg-verified/10 border border-verified/30 text-verified text-[13px] font-body font-semibold">
-            ✅ I Received It — Release Payment
-          </button>
+          <div className="w-full py-3 rounded-btn bg-verified/10 border border-verified/30 text-verified text-[13px] font-body font-semibold text-center">
+            🛰️ Auto GPS Escrow Active
+          </div>
+          <p className="text-[10px] font-body text-soft text-center">Payment auto-releases when GPS confirms delivery at your address</p>
           <button className="w-full py-3 rounded-btn bg-danger/10 border border-danger/30 text-danger text-[13px] font-body font-semibold">
             ⚠️ Raise a Dispute
           </button>
