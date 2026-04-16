@@ -20,7 +20,7 @@ const ARScan = () => {
           <span className="text-5xl opacity-30">👟</span>
           {/* Scan line */}
           <div className="absolute left-6 right-6 h-0.5 bg-primary/70 shadow-[0_0_8px_hsl(var(--primary))] animate-scan-line" />
-          <p className="absolute bottom-6 text-[10px] font-body text-muted-foreground">Align shoe inside the frame</p>
+          <p className="absolute bottom-6 text-[10px] font-body text-muted-foreground">Align product inside the frame</p>
         </div>
 
         {/* Result */}
