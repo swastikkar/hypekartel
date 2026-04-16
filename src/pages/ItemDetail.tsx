@@ -109,6 +109,31 @@ const ItemDetail = () => {
           </button>
         </div>
       </div>
+
+      {/* Provenance Modal */}
+      <Dialog open={showProvenance} onOpenChange={setShowProvenance}>
+        <DialogContent className="bg-card border-border text-foreground max-w-[340px] rounded-xl">
+          <DialogHeader>
+            <DialogTitle className="font-display text-base tracking-wider">📜 PROVENANCE</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-3">
+            {[
+              { icon: "🧾", label: "Original Receipt", detail: "Nike.com — 12 Jan 2025" },
+              { icon: "📦", label: "Box Condition", detail: "Intact, all tags attached" },
+              { icon: "📸", label: "Photos Verified", detail: "8 photos · AI cross-checked" },
+              { icon: "👤", label: "Previous Owners", detail: "1 — @kicks_boi (Gold Seller)" },
+            ].map((item) => (
+              <div key={item.label} className="flex items-center gap-3 bg-secondary/50 border border-border rounded-lg p-3">
+                <span className="text-lg">{item.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[12px] font-body font-semibold text-foreground">{item.label}</p>
+                  <p className="text-[10px] font-body text-muted-foreground">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     </PhoneFrame>
   );
 };
