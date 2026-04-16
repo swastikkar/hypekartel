@@ -10,7 +10,7 @@ const ItemDetail = () => {
   return (
     <PhoneFrame activeNav="home">
       <div className="space-y-3 animate-fade-in">
-        <BackHeader label="Trending Now" backTo="/" />
+        <BackHeader label="Trending Now" backTo="/home" />
 
         {/* Hero Image */}
         <div className="relative h-[220px] bg-gradient-to-br from-secondary to-card rounded-xl flex items-center justify-center">
