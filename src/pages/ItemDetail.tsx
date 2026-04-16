@@ -65,6 +65,7 @@ const ItemDetail = () => {
           subtitle="Original receipt · Box photos · 1 previous owner"
           action="View →"
           variant="default"
+          onClick={() => setShowProvenance(true)}
         />
 
         {/* Seller Card */}
