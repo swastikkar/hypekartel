@@ -47,7 +47,7 @@ const ARScan = () => {
         {/* Actions */}
         <div className="space-y-2 pb-4">
           <button className="w-full py-3 rounded-btn border border-border bg-card text-foreground text-[12px] font-body font-semibold">
-            👟 AR Try-On — See on my feet
+            AR Try-On
           </button>
           <button className="w-full py-3 rounded-btn border border-border bg-card text-foreground text-[12px] font-body font-semibold">
             🛡️ Check if this pair is authentic
