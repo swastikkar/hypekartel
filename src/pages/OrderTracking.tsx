@@ -5,8 +5,8 @@ const steps = [
   { label: "Payment in Escrow", sub: "₹24,000 secured", status: "done" },
   { label: "Seller Shipped", sub: "Tracking: DTDC-88421", status: "done" },
   { label: "Out for Delivery", sub: "Expected by 6 PM today", status: "active" },
-  { label: "Delivered", sub: "Awaiting confirmation", status: "pending" },
-  { label: "Confirm → Seller Paid", sub: "Release funds to seller", status: "pending" },
+  { label: "Delivered · GPS Verified", sub: "Auto-confirmed via GPS escrow", status: "pending" },
+  { label: "Seller Paid", sub: "Funds auto-released on delivery confirmation", status: "pending" },
 ];
 
 const OrderTracking = () => {
