@@ -1,13 +1,32 @@
 import PhoneFrame from "@/components/PhoneFrame";
 import TagChip from "@/components/TagChip";
 import StripCard from "@/components/StripCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { toast } from "@/hooks/use-toast";
 
 const conditions = ["DS", "VNDS", "8/10", "6/10"];
 const photoLabels = ["Front", "Back", "Side L", "Side R", "Sole", "Tag", "Box", "Receipt"];
 
 const SellPage = () => {
   const [activeCond, setActiveCond] = useState("DS");
+  const [showBiometric, setShowBiometric] = useState(false);
+  const [scanStage, setScanStage] = useState<"scanning" | "verified">("scanning");
+
+  useEffect(() => {
+    if (showBiometric) {
+      setScanStage("scanning");
+      const t = setTimeout(() => {
+        setScanStage("verified");
+        const close = setTimeout(() => {
+          setShowBiometric(false);
+          toast({ title: "✅ Identity Verified", description: "Face ID matched. You can now submit your listing." });
+        }, 1200);
+        return () => clearTimeout(close);
+      }, 2000);
+      return () => clearTimeout(t);
+    }
+  }, [showBiometric]);
 
   return (
     <PhoneFrame activeNav="sell">
@@ -71,6 +90,7 @@ const SellPage = () => {
           title="Biometric Seller ID Required"
           subtitle="Face ID verification before listing goes live"
           variant="purple"
+          onClick={() => setShowBiometric(true)}
         />
 
         <p className="text-[10px] font-body text-verified text-center">✅ Your identity is verified — no anonymous sellers on HypeKartel</p>
@@ -79,6 +99,31 @@ const SellPage = () => {
           Submit for Authentication →
         </button>
       </div>
+
+      {/* Biometric Modal */}
+      <Dialog open={showBiometric} onOpenChange={setShowBiometric}>
+        <DialogContent className="bg-card border-border text-foreground max-w-[340px] rounded-xl">
+          <DialogHeader>
+            <DialogTitle className="font-display text-base tracking-wider">🔏 BIOMETRIC SELLER ID</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-col items-center justify-center py-4 space-y-4">
+            <div className={`relative w-32 h-32 rounded-full border-2 flex items-center justify-center transition-colors ${scanStage === "verified" ? "border-verified" : "border-purple animate-pulse"}`}>
+              <span className="text-5xl">{scanStage === "verified" ? "✅" : "👤"}</span>
+              {scanStage === "scanning" && (
+                <div className="absolute left-2 right-2 h-0.5 bg-purple/70 shadow-[0_0_8px_hsl(var(--purple))] animate-scan-line" />
+              )}
+            </div>
+            <p className={`text-[12px] font-body font-semibold ${scanStage === "verified" ? "text-verified" : "text-purple"}`}>
+              {scanStage === "verified" ? "Face ID Verified" : "Scanning your face..."}
+            </p>
+            <p className="text-[10px] font-body text-soft text-center px-4">
+              {scanStage === "verified"
+                ? "Your identity has been confirmed on HypeKartel."
+                : "Hold still and look directly at the camera."}
+            </p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </PhoneFrame>
   );
 };
