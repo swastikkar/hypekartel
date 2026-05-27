@@ -1,4 +1,9 @@
-# HypeKartel
+# ██╗  ██╗██╗   ██╗██████╗ ███████╗██╗  ██╗ █████╗ ██████╗ ████████╗███████╗██╗
+██║  ██║╚██╗ ██╔╝██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██║
+███████║ ╚████╔╝ ██████╔╝█████╗  █████╔╝ ███████║██████╔╝   ██║   █████╗  ██║
+██╔══██║  ╚██╔╝  ██╔═══╝ ██╔══╝  ██╔═██╗ ██╔══██║██╔══██╗   ██║   ██╔══╝  ██║
+██║  ██║   ██║   ██║     ███████╗██║  ██╗██║  ██║██║  ██║   ██║   ███████╗███████╗
+╚═╝  ╚═╝   ╚═╝   ╚═╝     ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝
 
 > **The trust layer for India's sneaker & streetwear resale market.**
 > Authenticate. Trade. Flex — without the fakes.
@@ -139,6 +144,3 @@ This project is a prototype built for demo and competition purposes. All product
 
 ---
 
-## 🙌 Built With
-
-Crafted with [Lovable](https://lovable.dev). Live demo: https://hypekartel.lovable.app
