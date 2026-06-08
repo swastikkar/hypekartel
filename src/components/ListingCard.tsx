@@ -11,10 +11,13 @@ interface ListingCardProps {
 
 const ListingCard = ({ name, price, tier, condition, emoji = "👟" }: ListingCardProps) => {
   const navigate = useNavigate();
+  const handleClick = () => navigate("/item", { state: { name, price, tier, condition, emoji } });
+
+
 
   return (
     <button
-      onClick={() => navigate("/item")}
+      onClick={handleClick}
       className="bg-card rounded-xl border border-border overflow-hidden text-left w-full transition-transform active:scale-[0.97]"
     >
       <div className="relative h-[120px] bg-gradient-to-br from-secondary to-card flex items-center justify-center">
