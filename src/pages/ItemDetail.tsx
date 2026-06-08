@@ -25,7 +25,7 @@ const ItemDetail = () => {
 
         {/* Hero Image */}
         <div className="relative h-[220px] bg-gradient-to-br from-secondary to-card rounded-xl flex items-center justify-center">
-          <span className="text-7xl">👟</span>
+          <span className="text-7xl">{emoji}</span>
           <button className="absolute bottom-3 right-3 bg-card/80 backdrop-blur border border-border text-[10px] font-body px-2 py-1 rounded-pill text-foreground">
             👟 AR Try-On
           </button>
