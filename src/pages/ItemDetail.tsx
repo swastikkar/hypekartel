@@ -2,13 +2,21 @@ import PhoneFrame from "@/components/PhoneFrame";
 import BackHeader from "@/components/BackHeader";
 import TagChip from "@/components/TagChip";
 import StripCard from "@/components/StripCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const ItemDetail = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const product = (location.state as { name?: string; price?: string; tier?: string; condition?: string; emoji?: string } | null) ?? {};
+  const name = product.name ?? "AIR JORDAN 1 RETRO HIGH OG CHICAGO";
+  const price = product.price ?? "₹24,000";
+  const tier = product.tier ?? "Gold Seller";
+  const condition = product.condition ?? "DS";
+  const emoji = product.emoji ?? "👟";
   const [showProvenance, setShowProvenance] = useState(false);
+
 
   return (
     <PhoneFrame activeNav="home">
