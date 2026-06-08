@@ -11,6 +11,9 @@ interface ListingCardProps {
 
 const ListingCard = ({ name, price, tier, condition, emoji = "👟" }: ListingCardProps) => {
   const navigate = useNavigate();
+  const handleClick = () => navigate("/item", { state: { name, price, tier, condition, emoji } });
+
+
 
   return (
     <button
