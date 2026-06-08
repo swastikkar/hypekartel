@@ -2,13 +2,21 @@ import PhoneFrame from "@/components/PhoneFrame";
 import BackHeader from "@/components/BackHeader";
 import TagChip from "@/components/TagChip";
 import StripCard from "@/components/StripCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const ItemDetail = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const product = (location.state as { name?: string; price?: string; tier?: string; condition?: string; emoji?: string } | null) ?? {};
+  const name = product.name ?? "AIR JORDAN 1 RETRO HIGH OG CHICAGO";
+  const price = product.price ?? "₹24,000";
+  const tier = product.tier ?? "Gold Seller";
+  const condition = product.condition ?? "DS";
+  const emoji = product.emoji ?? "👟";
   const [showProvenance, setShowProvenance] = useState(false);
+
 
   return (
     <PhoneFrame activeNav="home">
@@ -17,22 +25,22 @@ const ItemDetail = () => {
 
         {/* Hero Image */}
         <div className="relative h-[220px] bg-gradient-to-br from-secondary to-card rounded-xl flex items-center justify-center">
-          <span className="text-7xl">👟</span>
+          <span className="text-7xl">{emoji}</span>
           <button className="absolute bottom-3 right-3 bg-card/80 backdrop-blur border border-border text-[10px] font-body px-2 py-1 rounded-pill text-foreground">
             👟 AR Try-On
           </button>
         </div>
 
-        <TagChip label="DS · DEADSTOCK" variant="green" />
+        <TagChip label={`${condition} · ${tier.toUpperCase()}`} variant="green" />
 
         <h2 className="font-display text-xl text-foreground tracking-wider leading-tight">
-          AIR JORDAN 1 RETRO HIGH OG CHICAGO
+          {name.toUpperCase()}
         </h2>
-        <p className="text-[11px] font-body text-soft">Size US 10 · 555088-170</p>
+        <p className="text-[11px] font-body text-soft">Condition: {condition}</p>
 
         {/* Price Row */}
         <div className="flex items-center justify-between">
-          <span className="font-display text-primary text-4xl">₹24,000</span>
+          <span className="font-display text-primary text-4xl">{price}</span>
           <div className="bg-verified/10 border border-verified/30 rounded-lg px-3 py-2 text-center">
             <p className="text-[9px] font-body text-verified">👥 Crowd Fair Price</p>
             <p className="text-[13px] font-body font-bold text-verified">₹22K – ₹26K</p>
