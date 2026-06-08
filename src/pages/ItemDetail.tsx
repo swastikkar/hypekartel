@@ -31,16 +31,16 @@ const ItemDetail = () => {
           </button>
         </div>
 
-        <TagChip label="DS · DEADSTOCK" variant="green" />
+        <TagChip label={`${condition} · ${tier.toUpperCase()}`} variant="green" />
 
         <h2 className="font-display text-xl text-foreground tracking-wider leading-tight">
-          AIR JORDAN 1 RETRO HIGH OG CHICAGO
+          {name.toUpperCase()}
         </h2>
-        <p className="text-[11px] font-body text-soft">Size US 10 · 555088-170</p>
+        <p className="text-[11px] font-body text-soft">Condition: {condition}</p>
 
         {/* Price Row */}
         <div className="flex items-center justify-between">
-          <span className="font-display text-primary text-4xl">₹24,000</span>
+          <span className="font-display text-primary text-4xl">{price}</span>
           <div className="bg-verified/10 border border-verified/30 rounded-lg px-3 py-2 text-center">
             <p className="text-[9px] font-body text-verified">👥 Crowd Fair Price</p>
             <p className="text-[13px] font-body font-bold text-verified">₹22K – ₹26K</p>
